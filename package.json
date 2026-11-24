@@ -1,0 +1,22 @@
+{
+  "name": "oneinbox",
+  "version": "0.1.0",
+  "description": "One inbox for email, chat and AI conversations. Desktop app and website from the same code.",
+  "private": true,
+  "main": "desktop/main.js",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "desktop": "electron .",
+    "dist": "npx --yes electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^45.0.0"
+  },
+  "build": {
+    "appId": "local.oneinbox.app",
+    "productName": "OneInbox",
+    "files": ["server/**/*", "web/**/*", "desktop/**/*", "package.json"],
+    "mac": { "category": "public.app-category.productivity" }
+  }
+}

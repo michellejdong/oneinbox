@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OneInbox</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-view="list">
+  <div id="app">
+    <aside id="sidebar" aria-label="Sources">
+      <div class="brand"><span class="logo" aria-hidden="true"></span>OneInbox</div>
+      <nav id="nav"></nav>
+      <div class="side-foot">
+        <button id="btn-connections" class="btn wide">Connections</button>
+        <button id="btn-sync" class="btn ghost wide">Check for new messages</button>
+        <div id="sync-status" class="hint"></div>
+      </div>
+    </aside>
+
+    <section id="list" aria-label="Conversations">
+      <header class="list-head">
+        <button id="btn-menu" class="icon-btn only-narrow" aria-label="Show sources">☰</button>
+        <input id="search" type="search" placeholder="Search every message" autocomplete="off" aria-label="Search every message">
+        <label class="toggle"><input id="only-unread" type="checkbox"> Unread</label>
+      </header>
+      <div id="tools"></div>
+      <div id="banner"></div>
+      <div id="threads" role="list"></div>
+    </section>
+
+    <main id="pane" aria-live="polite"></main>
+  </div>
+
+  <dialog id="connections">
+    <header class="dialog-head">
+      <h2>Connections</h2>
+      <button id="btn-close" class="icon-btn" aria-label="Close">✕</button>
+    </header>
+    <div id="connections-body"></div>
+  </dialog>
+
+  <div id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
